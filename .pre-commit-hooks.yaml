@@ -2,7 +2,7 @@
   name: gettext
   description: 'Generate the .pot file for the specified sources'
   entry: sphinx-build -b gettext
-  language: bash
+  language: python
   args: ["docs/source", "docs/build/gettext"]
   minimum_pre_commit_version: 2.9.2
   additional_dependencies: ["sphinx"]
@@ -10,6 +10,6 @@
   name: intl
   description: "Generate the .po files from the specified gettext source to locale dir"
   entry: sphinx-intl update -p
-  language: bash
+  language: python
   args: ["docs/build/gettext", "--locale-dir=docs/source/_locale"]
   minimum_pre_commit_version: 2.9.2
